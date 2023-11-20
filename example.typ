@@ -9,7 +9,11 @@
     "Author 4 name and surname",
   ),
   subject: "Subject",
-  date: "Date",
+  date: (
+    year: 2023,
+    month: 1,
+    day: 10,
+  ),
   isIndexed: true,
 )
 
