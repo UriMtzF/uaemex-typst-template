@@ -1,4 +1,13 @@
-#let project(subject:"", title: "", authors: (), date: "", isIndexed: bool ,body) = {
+#let getDate(date) = {
+  if date.month < 1 or date.month > 12 {
+    panic("Fecha no valida")
+  }
+  let monthTxt = ("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre")
+  
+  return str(date.day) + " de " + monthTxt.at(date.month - 1) + " de " + str(date.year)
+}
+
+#let project(subject:"", title: "", authors: (), date: (), isIndexed: bool ,body) = {
   set document(author: authors, title: title)
   set page(
     paper: "us-letter", 
@@ -28,7 +37,7 @@
         #block(text(weight: 300, 1.5em, author))
       ]
       #v(10%, weak: true)
-      #block(text(weight: 300, 1.3em, date)) 
+      #block(text(weight: 300, 1.3em, getDate(date))) 
     ]
   ]
   set page(numbering: "1")
