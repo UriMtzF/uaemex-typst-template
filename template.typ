@@ -20,7 +20,7 @@
   align(center)[
     // You can change the header of the cover page by your own image, recommended sizes
     // width: 1800px; height: 320px
-    #block(figure(image("encabezado.jpg", width: 100%)))
+    #block((image("encabezado.jpg", width: 100%)))
     // The faculty name can be changed
     #block(text(weight: 700, 1.8em, "Facultad de ingeniería"))
     #v(15%, weak: true)
